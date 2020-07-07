@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: auto; font-family: Roboto, "Helvetica Neue", sans-serif; 
+body { height: 100%; font-family: Roboto, "Helvetica Neue", sans-serif;  padding-right: 460px;}
+body,.as-body { 
+    margin: auto; 
     width: 70%;
     text-align: center;
-    padding-right: 460px;
 }
+
+.flex{display: flex; justify-content: space-around;}

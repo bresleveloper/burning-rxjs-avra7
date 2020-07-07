@@ -1,29 +1,20 @@
 
-
+<!--
 <button mat-button [matMenuTriggerFor]="BasicsMenu">Basics</button>
 <mat-menu #BasicsMenu="matMenu">
   <button mat-menu-item routerLink="example">example of Observable and Subjects</button>
-  <button mat-menu-item>Item 2</button>
+  <button mat-menu-item routerLink="ajaxing">evolution with ajax</button>
 </mat-menu>
+-->
+<br>
+<button mat-raised-button color="accent" routerLink="example">example of Observable and Subjects</button>
+&nbsp;&nbsp;&nbsp;
+<button mat-raised-button color="accent" routerLink="ajaxing">evolution with ajax</button>
+&nbsp;&nbsp;&nbsp;
+<button mat-raised-button color="accent" routerLink="comm">2 Comps with Service Communication</button>
+<br>
+<br>
 
-<button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
-<mat-menu #belowMenu="matMenu" >
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
-
-<button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
-<mat-menu #beforeMenu="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
-
-
-<button mat-button [matMenuTriggerFor]="afterMenu">After</button>
-<mat-menu #afterMenu="matMenu" >
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
 
 
 <router-outlet></router-outlet>

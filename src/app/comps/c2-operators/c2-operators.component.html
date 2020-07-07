@@ -1,1 +1,43 @@
-<p>c2-operators works!</p>
+<p>c2-ajaxings works!</p>
+
+
+<h1>persons with or without *ngIf</h1>
+<div *ngIf="!persons1">Loading persons1... </div>
+<ul class="coutries" *ngIf="persons1">
+    <li *ngFor="let p of persons1">{{p.name}} - {{p.age}} </li>
+</ul>
+
+<br><hr><br>
+<h1>listen to counter subject</h1>
+<ul class="coutries">
+    <li >{{ timnoutetyty | async }}</li>
+</ul>
+
+<br><hr><br>
+
+<h1>persons2 - its just a .next to persons1 </h1>
+<button (click)="makeNextPersons2()">make next to persons2 from persons1</button>
+<ul class="coutries">
+    <li *ngFor="let p of Persons2Subject | async">{{p.name}} - {{p.age}} </li>
+</ul>
+
+
+<br><hr><br>
+
+
+<h1>svc.ServicePersonsSubject </h1>
+<ul class="coutries">
+    <li *ngFor="let p of svc.ServicePersonsSubject | async">{{p.name}} - {{p.age}} </li>
+</ul>
+
+
+
+<br><hr><br>
+
+
+<h1>svc.ServicePersonsBehaviorSubject </h1>
+<ul class="coutries">
+    <li *ngFor="let p of svc.ServicePersonsBehaviorSubject | async">{{p.name}} - {{p.age}} </li>
+</ul>
+
+

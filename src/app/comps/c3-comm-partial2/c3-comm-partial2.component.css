@@ -1,0 +1,6 @@
+table{border-collapse: collapse; }
+
+table tr { 
+    border-top: 2px solid #555;
+    background: cornflowerblue;
+}

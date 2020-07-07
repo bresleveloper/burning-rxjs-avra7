@@ -1,0 +1,18 @@
+
+<div *ngIf="s.amIReady | async">
+    <p>c3-comm-partial2 works!</p>
+    
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+        </tr>    
+        <tr *ngFor="let p of addedPupils">
+            <td>{{p.name}}</td>
+            <td>{{p.age}}</td>
+        </tr>
+    </table>
+
+    <h1>{{aggRes}}</h1>
+    <h1>{{this.s.aggregateAgeResult | async}}</h1>
+</div>

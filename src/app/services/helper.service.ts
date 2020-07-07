@@ -1,14 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Subject, observable } from 'rxjs';
+import { Observable, of, Subject, observable, BehaviorSubject } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { log } from 'util';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelperService {
 
-  constructor(private http:HttpClient) { }
+  ServicePersonsSubject:Subject<Person[]> = new Subject<Person[]>()
+  ServicePersonsBehaviorSubject:BehaviorSubject<Person[]> = new BehaviorSubject<Person[]>(null)
+
+  constructor(private http:HttpClient) { 
+    this.httpGetPersonsFromDB().subscribe(data => {
+      this.ServicePersonsSubject.next(data)
+      this.ServicePersonsBehaviorSubject.next(data)
+    })
+
+
+    this.ServicePersonsSubject.subscribe(data => console.log('ServicePersonsSubject next', data))
+    this.ServicePersonsBehaviorSubject.subscribe(data => console.log('ServicePersonsBehaviorSubject next', data))
+    
+  }
 
   getRandomNumber():Observable<number>{
     let n = Math.floor(Math.random() * 66) + 1  
@@ -43,6 +57,10 @@ export class HelperService {
       })
     )
   }
+
+
+
+
 
 
 }

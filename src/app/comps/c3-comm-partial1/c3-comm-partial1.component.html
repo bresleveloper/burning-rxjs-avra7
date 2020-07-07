@@ -1,0 +1,25 @@
+<p>c3-comm-partial1 works!</p>
+
+
+
+<mat-form-field class="example-full-width">
+    <mat-label>auto Complete</mat-label>
+    <input matInput placeholder="Choose Country" #name>
+</mat-form-field>
+<Br>
+
+<mat-form-field class="example-full-width">
+    <mat-label>auto Complete</mat-label>
+    <input matInput placeholder="Choose Country" #age>
+</mat-form-field>
+<Br>
+    <Br>
+<button (click)="sendAddPupil(name.value, age.value)" mat-raised-button color="primary" >add to table</button> 
+<Br>
+<Br>
+    <Br>
+
+<h3 style="background:red;color:aliceblue;" *ngIf="failedAdd"><b>FAILED!!!</b></h3>        
+
+<button (click)="s.aggregateAge()" mat-raised-button color="primary" >aggregate all ages</button> 
+<Br>
