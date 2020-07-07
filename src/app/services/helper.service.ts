@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject, observable } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { delay, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelperService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getRandomNumber():Observable<number>{
     let n = Math.floor(Math.random() * 66) + 1  
@@ -31,4 +32,22 @@ export class HelperService {
   }
 
 
+
+  httpGetPersonsFromDB() : Observable<Person[]>{
+    let u="https://raw.githubusercontent.com/bresleveloper/db/master/ajax/someDB.json"
+    return this.http.get(u).pipe(
+      map(ajaxResults => {
+        let a1:Person[] = ajaxResults['students']
+        let a2:Person[] = ajaxResults['jiraffs']
+        return a1.concat(a2)
+      })
+    )
+  }
+
+
+}
+
+export class Person {
+  name:string
+  age:number
 }
