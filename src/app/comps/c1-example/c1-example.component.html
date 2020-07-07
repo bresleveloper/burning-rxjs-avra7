@@ -1,0 +1,46 @@
+<p>c1-example works!</p>
+
+
+<button mat-raised-button color="primary" (click)="obsRnd()">fire Observable random</button> 
+&nbsp;&nbsp;&nbsp;
+coutner1 value :: 
+{{counter1}}
+<br>
+<br>
+
+<button (click)="obsRndWithDelay()" mat-raised-button color="primary" >fire Observable random with delay</button> 
+&nbsp;&nbsp;&nbsp;
+coutner2 value :: 
+{{counter2}}
+<br>
+<br>
+
+
+
+<mat-form-field class="example-full-width">
+    <mat-label>auto Complete</mat-label>
+    <input matInput placeholder="Choose Country" #coutriesInput>
+</mat-form-field>
+
+&nbsp;&nbsp;&nbsp;
+
+<ul class="coutries">
+    <li *ngFor="let c of coutriesArrResults">{{c}}</li>
+</ul>
+
+<br>
+<br>
+
+<mat-form-field class="example-full-width">
+    <mat-label>auto Complete obj</mat-label>
+    <input matInput placeholder="Choose Country" #coutriesInput2>
+</mat-form-field>
+
+&nbsp;&nbsp;&nbsp;
+
+<ul class="coutries">
+    <li *ngFor="let c of coutriesArrResults2">{{c}}</li>
+</ul>
+
+<br>
+<br>
