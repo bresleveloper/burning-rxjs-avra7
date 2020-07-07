@@ -17,7 +17,15 @@ repo: `https://github.com/bresleveloper/burning-rxjs-avra7/`
 
 ### comps and sessions
 1. c1-example - showing `Observable`, operators like in last session
-2. query server with `Observable` and using both "ready" `Subject` and "ready" `BehaviorSubject`, instead of `*ngIf`, and `async` pipe
+    * map
+    * debounceTime
+    * distinctUntilChanged
+    * switchMap
+2. query server with `Observable` and using "ready" with
+    * `*ngIf`
+    * `Subject`
+    * `BehaviorSubject`
+    *  `async` pipe
 
 
 
